@@ -83,7 +83,7 @@ It is often useful and necessary to separate the introduction into multiple sect
 Several possible sections are proposed below, you can use these or distribute your
 introductory text into sections in another way.
 
-The headings below propose _one way_ you might structure this section of the document.
+The headings below propose _one way_ you might structure this section of the document..
 
 ## Motivation
 
