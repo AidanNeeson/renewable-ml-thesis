@@ -1,6 +1,6 @@
 # Introduction
 
-    In an era marked by unprecedented environmental challenges, the imperative to address the impacts of climate change has become increasingly urgent.
+In an era marked by unprecedented environmental challenges, the imperative to address the impacts of climate change has become increasingly urgent.
 As our planet struggles to persist in a healthy state as a result of the tumultuous onslaught brought on by rising global temperatures, extreme
 weather events, and ecological disruptions, the necessity for a pursuit of a sustainable future has never been more prevalent. In this pursuit,
 renewable energy has seated itself as a pivotal solution to mitigate the environmental effects of traditional energy production. Among these alternatives,
@@ -11,7 +11,7 @@ holistic perspective on the viability and economic implications of green energy 
 
 ## Motivation
 
-    It goes without question that the Earth is warming at an abnormal rate compared to years prior. The source of the obscure warming period we, as a
+It goes without question that the Earth is warming at an abnormal rate compared to years prior. The source of the obscure warming period we, as a
 society, are experiencing is highly debated in fields ranging from politics, to economics, and even to education. However, there is clear evidence,
 seen in the results of numerous studies, that emphasize human contributions, which go as far as to prove humans are furthering the negative effects of
 climate change through the escalation of global temperatures. Prolonged temperature observations serve as the most persistent evidence of climate
@@ -44,7 +44,7 @@ low, is no easy task. This is an issue this project seeks to address.
 
 ## Goals of the Project
 
-    Renewable energy is difficult to install due to the large collection of barriers that get in the way of a process that is ultimately beneficial for
+Renewable energy is difficult to install due to the large collection of barriers that get in the way of a process that is ultimately beneficial for
 the whole. Five of these barriers present themselves as the leading blockades to low-carbon installations. These include economic barriers, knowledge
 barriers, social barriers, organizational barriers, and installation-related barriers. [@REINDL2021110829] [@Mastoi2023] Each barrier carries with it
 its own set of divisions that better define it, but ultimately, each barrier can be mostly resolved simply through access to valuable resources and
@@ -62,7 +62,7 @@ changes to the climate.
 
 ## Ethical Implications
 
-    This project also has the potential to carry with it negative side effects if misused, or abused, or just by nature of the field in which work in
+This project also has the potential to carry with it negative side effects if misused, or abused, or just by nature of the field in which work in
 renewables operates. One of these side effects persists of the land use impacts that green energy arrays carry with them. This is important to
 consider as, if the tool developed from this work is used to promote, plan, and construct renewable energy solutions, then the spacial extent of these
 technologies plays a meaningful role in the lives of individuals and the environment. By nature, low-carbon energy sources have lower power densities
