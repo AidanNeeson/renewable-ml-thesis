@@ -1,9 +1,9 @@
 # Introduction
 
-In an era marked by unprecedented environmental challenges, the imperative to address the impacts of climate change has become increasingly urgent.
+    In an era marked by unprecedented environmental challenges, the imperative to address the impacts of climate change has become increasingly urgent.
 As our planet struggles to persist in a healthy state as a result of the tumultuous onslaught brought on by rising global temperatures, extreme
 weather events, and ecological disruptions, the necessity for a pursuit of a sustainable future has never been more prevalent. In this pursuit,
-renewable energy has seated itself as a pivotal solution to mitigate the environmental of traditional energy production. Among these alternatives,
+renewable energy has seated itself as a pivotal solution to mitigate the environmental effects of traditional energy production. Among these alternatives,
 green energy arrays, comprising of solar and wind technologies, hold immense promise. The venture to harness the true potential that these
 technologies hold, however, comes at the cost of needing a nuanced understanding of certain geographic factors that influence their performance and
 cost-effectiveness. This project embarks on a pioneering exploration, marrying geographic data with advanced machine learning models, to offer a
@@ -11,18 +11,18 @@ holistic perspective on the viability and economic implications of green energy 
 
 ## Motivation
 
-It goes without question that the Earth is warming at an abnormal rate compared to years prior. The source of the obscure warming period we, as a
+    It goes without question that the Earth is warming at an abnormal rate compared to years prior. The source of the obscure warming period we, as a
 society, are experiencing is highly debated in fields ranging from politics, to economics, and even to education. However, there is clear evidence,
 seen in the results of numerous studies, that emphasize human contributions, which go as far as to prove humans are furthering the negative effects of
 climate change through the escalation of global temperatures. Prolonged temperature observations serve as the most persistent evidence of climate
 change. [@21558] Imperious is the effect of temperature on multiple aspects of human society and the environment such as agriculture, human health,
 water, infrastructure, and ecosystems. Temperature is the governing factor when it comes to consequences of climate change, and it has only been
-increasing. For perspective, the global annually averaged surface air temperature has risen by 1.8 $^{\circ}$ F (1.0 $^{\circ}$ C) over the last 115
+increasing. For perspective, the global annually averaged surface air temperature has risen by 1.8$^{\circ}$F (1.0$^{\circ}$C) over the last 115
 years. [@21558] This drastic increase in temperature has now marked the current period as the warmest in modern civilization's history. [@21558] More
-specifically, for the period 1986-2016 relative to 1901-1960, the global annual average temperature has increased by more than 1.2 $^{\circ}$ F
-(0.7 $^{\circ}$ C). Surface temperatures worldwide have also increased by up to 3.0 $^{\circ}$ F in some areas of the globe. [Figure 1] [@21558]
+specifically, for the period 1986-2016 relative to 1901-1960, the global annual average temperature has increased by more than 1.2$^{\circ}$F
+(0.7$^{\circ}$C). Surface temperatures worldwide have also increased by up to 3.0 $^{\circ}$ F in some areas of the globe. [Figure 1] [@21558]
 
-![Figure 1. [@21558]](images/es-1.png)
+![The left panel indicates global average temperature readings relative to the 1901-1960 average. It showcases an overall increase over a span of about 120 years. Red bars represent temperatures higher than the average, while blue bars represent those that are lower than average. [@21558] The right panle indicates surface temperature changes (in $^{\circ}$F) for the period 1986-2016, relative to the same average. Gray represents missing data. [@21558]](images/es-1.png)
 
 The parallel between the time period which dictates the greatest increase in warming, and the time period in which humans have seen substantial growth
 in technology and infrastructure, is no coincidence. In fact, society is acting perilously regarding the state of our world through the widespread
@@ -32,7 +32,7 @@ these effects are not, and will not be fruitless. It can be observed that if no 
 worse, while if changes are made and emissions are cut to the bare minimum, then damage to the planet will not grow, and instead will taper off until
 the Earth naturally rebalances itself. [Figure 2] [@21558]
 
-![Figure 2. [@21558]](images/es-3.png)
+![The left panel shows annual historic range of plausible future carbon emissions per year. The right panel shows historically observed temperature changes and future temeperature changes as a result of a set of future scenarios relative to the 1901-1960 average.[@21558] In combination, a correlation is seen that suggests the severity of carbon emissions maps directly to temperature change.](images/es-3.png)
 
 With this information, the culprit becomes identified: the burning of fossil fuels that release greenhouse gasses. Over 70% of global greenhouse gas
 emissions come from the energy sector. [@owid-ghg-emissions-by-sector] These emissions are responsible for powering the worldwide manufacturing
@@ -44,7 +44,7 @@ low, is no easy task. This is an issue this project seeks to address.
 
 ## Goals of the Project
 
-Renewable energy is difficult to install due to the large collection of barriers that get in the way of a process that is ultimately beneficial for
+    Renewable energy is difficult to install due to the large collection of barriers that get in the way of a process that is ultimately beneficial for
 the whole. Five of these barriers present themselves as the leading blockades to low-carbon installations. These include economic barriers, knowledge
 barriers, social barriers, organizational barriers, and installation-related barriers. [@REINDL2021110829] [@Mastoi2023] Each barrier carries with it
 its own set of divisions that better define it, but ultimately, each barrier can be mostly resolved simply through access to valuable resources and
@@ -62,9 +62,26 @@ changes to the climate.
 
 ## Ethical Implications
 
-This project also has the potential to carry with it negative side effects if misused, or abused, or just by nature of the field in which work in renewables operates. One of these side effects persists of the land use impacts that green energy arrays carry with them. This is important to consider as, if the tool developed from this work is used to promote, plan, and construct renewable energy solutions, then the spacial extent of these technologies plays a meaningful role in the lives of individuals and the environment. By nature, low-carbon energy sources have lower power densities than their non-renewable, high-carbon counterparts. [@VANZALK201883] Each array then requires more land area to produce similar amounts of energy, leading to estimates that dictate that significant portions of land will be occupied by renewable energy systems. [@VANZALK201883] Worries become even more prevalent as the political climate shifts towards mandating the installation of these technologies. California Senate Bill 100 does just this, by committing the state to achieving 100% clean energy in all sectors by 2045. [@SCHULTE201931] This could lead to monumental land use impacts that could displace individuals, unjustly occupy land, and destroy the environment, due to incentives to install more renewables. Given the scenario where this tool is used similarly, it could also indirectly perpetuate these same injustices.
+    This project also has the potential to carry with it negative side effects if misused, or abused, or just by nature of the field in which work in
+renewables operates. One of these side effects persists of the land use impacts that green energy arrays carry with them. This is important to
+consider as, if the tool developed from this work is used to promote, plan, and construct renewable energy solutions, then the spacial extent of these
+technologies plays a meaningful role in the lives of individuals and the environment. By nature, low-carbon energy sources have lower power densities
+than their non-renewable, high-carbon counterparts. [@VANZALK201883] Each array then requires more land area to produce similar amounts of energy,
+leading to estimates that dictate that significant portions of land will be occupied by renewable energy systems. [@VANZALK201883] Worries become even
+more prevalent as the political climate shifts towards mandating the installation of these technologies. California Senate Bill 100 does just this, by
+committing the state to achieving 100% clean energy in all sectors by 2045. [@SCHULTE201931] This could lead to monumental land use impacts that could
+displace individuals, unjustly occupy land, and destroy the environment, due to incentives to install more renewables. Given the scenario where this
+tool is used similarly, it could also indirectly perpetuate these same injustices.
 
-Land use is not the only transgression that the promotion, production and installation of renewables can perpetrate, however. The materials needed to create the solar panels and wind turbines that could be installed through the use of this project's tool pose severe threats to environmental health, and, subsequently, human health. [@Sonter2020] Mining for the vast array of resources needed for low-carbon installations potentially influences 37% of Earth's terrestrial land area under some assumptions, which has large impacts on biodiversity by the way of habitat loss and ecosystem destruction. [@Sonter2020] Each resource being mined carries with it its own set of risks for the worker(s) extracting the minerals. Risks mainly manifest themselves as direct health issues like respiratory impacts, cancers, or other mining related injuries. [@Stephens2001WorkerAC] When it comes to mining, it is also important to discuss the social impacts that mining can have on certain communities. Peru showcases how mining affects the life of individuals societally by presenting large economic disparities based on geographic distance to mining centers. [@LOAYZA2016219] Taking these impacts into consideration, considerable controversy can be identified and applied to the installation of renewable sources.
+Land use is not the only transgression that the promotion, production and installation of renewables can perpetrate, however. The materials needed to
+create the solar panels and wind turbines that could be installed through the use of this project's tool pose severe threats to environmental health,
+and, subsequently, human health. [@Sonter2020] Mining for the vast array of resources needed for low-carbon installations potentially influences 37% of
+Earth's terrestrial land area under some assumptions, which has large impacts on biodiversity by the way of habitat loss and ecosystem destruction.
+[@Sonter2020] Furthermore, each resource being mined carries with it its own set of risks for the worker(s) extracting the minerals. Risks mainly
+manifest themselves as direct health issues like respiratory impacts, cancers, or other mining related injuries. [@Stephens2001WorkerAC] When it comes
+to mining, it is also important to discuss the social impacts that mining can have on certain communities. Peru showcases how mining affects the life of
+individuals societally by presenting large economic disparities based on geographic distance to mining centers. [@LOAYZA2016219] Taking these impacts
+into consideration, considerable controversy can be identified and applied to the installation of renewable sources.
 
 
 # Related work
