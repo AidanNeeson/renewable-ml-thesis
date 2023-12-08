@@ -22,7 +22,7 @@ years. [@21558] This drastic increase in temperature has now marked the current 
 specifically, for the period 1986-2016 relative to 1901-1960, the global annual average temperature has increased by more than 1.2 $^{\circ}$ F
 (0.7 $^{\circ}$ C). Surface temperatures worldwide have also increased by up to 3.0 $^{\circ}$ F in some areas of the globe. [Figure 1] [@21558]
 
-![Figure 1. [@21558]](/images/es-1.png)
+![Figure 1. [@21558]](images/es-1.png)
 
 The parallel between the time period which dictates the greatest increase in warming, and the time period in which humans have seen substantial growth
 in technology and infrastructure, is no coincidence. In fact, society is acting perilously regarding the state of our world through the widespread
@@ -32,7 +32,7 @@ these effects are not, and will not be fruitless. It can be observed that if no 
 worse, while if changes are made and emissions are cut to the bare minimum, then damage to the planet will not grow, and instead will taper off until
 the Earth naturally rebalances itself. [Figure 2] [@21558]
 
-![Figure 2. [@21558]](/images/es-3.png)
+![Figure 2. [@21558]](images/es-3.png)
 
 With this information, the culprit becomes identified: the burning of fossil fuels that release greenhouse gasses. Over 70% of global greenhouse gas
 emissions come from the energy sector. [@owid-ghg-emissions-by-sector] These emissions are responsible for powering the worldwide manufacturing
