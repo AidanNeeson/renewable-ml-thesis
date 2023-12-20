@@ -115,60 +115,60 @@ One of the most impactful contributors to this field is the National Renewable E
 accurate and useful tools and data for a wide range of consumers ranging from the general public, to private companies. The most influential of these
 tools is the NREL's System Advisor Model (SAM). The SAM is a techno-economic computer model that is designed to facilitate decision making for people who
 are strictly involved in the renewable energy industry. More specifically, is it tailored to be a resource for project managers and engineers, financial
-and policy analysts, technology developers, and researchers. [osti_1440404] This tool offers very in-depth analysis of a multitude of renewable energy
+and policy analysts, technology developers, and researchers. [@osti_1440404] This tool offers very in-depth analysis of a multitude of renewable energy
 arrays ranging from wind and solar, to geothermal and tidal. Each renewable energy source then has dozens of various input parameters that allow the user
 to adjust the array to fit their specifications, along with the inclusion of any relevant economic information. In the end, SAM provides a fully formated
 and detailed report, with graphs, tables, and charts, that outline the performance of multiple factors of the array and its financial implications.
-[osti_1440404] The simulations used to get to these conclusions consist of calculating the power output of a system for each hourly, or subhourly,
+[@osti_1440404] The simulations used to get to these conclusions consist of calculating the power output of a system for each hourly, or subhourly,
 timestep in a year, and calculating project cash flow over a designated multi-year period. These simulations can then be used to perform studies like
 parametric analysis, which examines relationships between input variables and results, or stochastic analysis, which creates histograms that showcase the
-sensitivity of results to input values. [osti_1440404] A study was performed to validate the accuracy of SAM's predictions, and it was found that for all
-systems evaluated, the annual agreement between SAM-predicted and measured power production is within $\pm$ 3%. [osti_1115788] Overall, the NREL's SAM
+sensitivity of results to input values. [@osti_1440404] A study was performed to validate the accuracy of SAM's predictions, and it was found that for all
+systems evaluated, the annual agreement between SAM-predicted and measured power production is within $\pm$ 3%. [@osti_1115788] Overall, the NREL's SAM
 has shown itself to be a monumental step in being able to provide accurate information about a range of renewable energy arrays, even if it is tailored
 towards a very specific audience.
 
 An earlier tool, PVsyst, founded by André Mermoud and Michel Villoz, allows for a similar in-depth analysis, however, the focus is entirely on
 photovoltaic (PV) systems. PVsyst, similarly to SAM, was designed for a specific demographic that encompasses architects, engineers, and researchers of
-PV systems. [Mermoud_Villoz_2023] As such, the interface, process, models, and results are out of the scope of the general public. In spite of that,
+PV systems. [@Mermoud_Villoz_2023] As such, the interface, process, models, and results are out of the scope of the general public. In spite of that,
 PVsyst does offer great tooltips and help menus to explain what is happening behind closed doors, which opens up the opportunity for individuals who
-otherwise would be unfamiliar with PV systems to educate themselves on certain concepts. [Mermoud_Villoz_2023] Regardless, the software carries with it
+otherwise would be unfamiliar with PV systems to educate themselves on certain concepts. [@Mermoud_Villoz_2023] Regardless, the software carries with it
 an assumption that the user has a lot of the information internalized, however, these assumptions allow PVsyst to provide valuable, detailed metrics. The
 tool comes equipped with the ability to map out system design and sizing, simulate shading and grid storage, perform economic evaluations, and even
-simualte solar pumping systems. [Mermoud_Villoz_2023] All of these features that come with PVsyst also bring with them the necessity for a cumbersome
+simualte solar pumping systems. [@Mermoud_Villoz_2023] All of these features that come with PVsyst also bring with them the necessity for a cumbersome
 amount of input parameters to carry out the simulations and modelings, so much so that the barrier to entry is even higher, further restricting who can
 effectively use the software. Nonetheless, PVsyst is a well maintained, early iteration into the field of renewable energy simulating and modeling, in so
 much as its impacts can be seen in other tools. Restrictions aside, it provides valuable insights into some of the most important results to be found
 when analyzing low-carbon technologies for both efficiency and cost.
 
 A large focus of many of the tools in this field are heavily focused on optimization and extracting as much information about an array as possible. SAM,
-PVsyst, and others, like Openwind, a software package aimed specifically at wind farms, are examples of these technologies. [Openwind_2023] Many private
+PVsyst, and others, like Openwind, a software package aimed specifically at wind farms, are examples of these technologies. [@Openwind_2023] Many private
 companies and citizens, however, do not need to know such specific details about renewable energy arrays. Most of the time, the information that is
 needed in the eyes of private companies looking at promoting or selling renewable energy does not extend past estimated energy output and cost of
 potential installations. This is where tools like OpenSolar become very valuable. OpenSolar is a free application that enables users to design and
-simulate annual energy production and costs for small residential and commercial PV systems. [Westbrook_Macpherson_Desharnais_2021] The end goal of the
+simulate annual energy production and costs for small residential and commercial PV systems. [@Westbrook_Macpherson_Desharnais_2021] The end goal of the
 OpenSolar experience leads to the creation of a proposal, indicating a heavy skew towards this tool being used by companies selling solar to clients.
 Digital surface model data (DSM) is used to gather three-dimensional information of certain locations, which is then used for their shading models for
 energy production estimates, which culminate into the solar proposals that outline the viability of a given solar installation. These calculations are
 abstracted from the user, and while they have the option to input some of this information manually, most of it happens without the need to input any
-parameters. [Westbrook_Macpherson_Desharnais_2021] The bare minimum requirements that are needed to design a solar array and generate energy production
+parameters. [@Westbrook_Macpherson_Desharnais_2021] The bare minimum requirements that are needed to design a solar array and generate energy production
 and cost estimates is the location of the desired array, the cost of energy from utilities in the given location, and the desired solar modules and
 equipment to be used. While the design process is more interactive than inputting those three fragments of information, it is significantly less complex
 that other software like SAM, or PVsyst. The application also comes with a simple and easy to follow tutorial that greatly lowers the barrier to entry.
 This lack of complexity does not take away from the accuracy and effectiveness of OpenSolar's models, however. The NREL's SAM is utilized by OpenSolar to
-generate many of the estimates, which has proven itself to be an accurate tool. [Westbrook_Macpherson_Desharnais_2021] Overall, OpenSolar does a great
+generate many of the estimates, which has proven itself to be an accurate tool. [@Westbrook_Macpherson_Desharnais_2021] Overall, OpenSolar does a great
 job at filling its role as being a simple design tool that gives companies, and potentially citizens, the ability to make informed decisions about the
 potential for solar installations. Yet, there exists still a multi-step process that a user must complete to gain access to accurate estimates.
 
 Another contribution from the NREL, PVWatts, establishes progress towards solving the problem posed by all of the previously mentioned tools: the
 necessity to follow a multi-step process and supply a vast amount of input parameters. The NREL PVWatts calculator is a web application that estimates
-electricity production of a grid-connected PV system based on a small number of trivial inputs. [osti_1158421] These inputs include values like array
+electricity production of a grid-connected PV system based on a small number of trivial inputs. [@osti_1158421] These inputs include values like array
 location, in the form of longitude and latitude, array size, array orientation, and some other optional parameters. Once filled out, the results of the
-calculation can be viewed, which portray the total estimated amount of solar irradiance and energy output both annually and monthly. [osti_1158421] It is
-important to note that the results are made so easily available due to the use of many assumptions about the system being examined. [osti_1158421]
+calculation can be viewed, which portray the total estimated amount of solar irradiance and energy output both annually and monthly. [@osti_1158421] It is
+important to note that the results are made so easily available due to the use of many assumptions about the system being examined. [@osti_1158421]
 PVWatts is very simple, and with this comes some drawback relating to accuracy. It is documented in the version manual that errors can be high as
 $\pm$ 10% for annual energy totals and $\pm$ 30% for monthly values, potentially even reaching $\pm$ 20% and $\pm$ 40% respectively when regarding
-some edge cases. [osti_1158421] Errors being so high has the potential to be negative, but given the purpose of PVWatts, these values are quite 
-reasonable. The goal of PVWatts is to give quick estimates of energy production from PV systems. [osti_1158421] This is something that the application
+some edge cases. [@osti_1158421] Errors being so high has the potential to be negative, but given the purpose of PVWatts, these values are quite 
+reasonable. The goal of PVWatts is to give quick estimates of energy production from PV systems. [@osti_1158421] This is something that the application
 does accomplish accurately enough in a majority of situations. There are still issues to be had regarding PVWatts, however. The information provided is
 very lightweight. In the end, all that a user receives is two estimates, even when there is a potential for substantially more information to be given.
 
@@ -203,10 +203,10 @@ PVsyst utilizes, this research takes a different approach to getting results tha
 becoming more prevalent than ever before, with artificial intelligence and large language models dominating the computer science space currently. This
 project builds off of the power of machine learning to create a tool that can address the needs of the renewable energy field. Within the context of
 geographic data, of which the data this project uses resides, cluster analysis is seen as immensely useful in identifying groups of similar data points
-and performing detailed analysis of each group. [tung2000geo] More specifically, K-means clustering is used to perform the grouping of data points. The
+and performing detailed analysis of each group. [@tung2000geo] More specifically, K-means clustering is used to perform the grouping of data points. The
 K-means clustering algorithm takes an initial clustering that is not optimal and relocates each point in the cluster to its new nearest center, then
 updates the clustering centers by finding the mean of the member points, iteratively following this process until the convergence criteria is met, which
-in most cases is the defined number of iterations. [Jin2010] These kinds of algorithms and models can be applied to the geographic data in question to
+in most cases is the defined number of iterations. [@Jin2010] These kinds of algorithms and models can be applied to the geographic data in question to
 effectively model the same results that SAM and PVsyst produce. The benefit of this solution is that it only takes a few inputs to perform the analysis.
 Combining it all together realizes a tool that is easy to use, as it has very few inputs, and has the ability to produce a wide range of predictions for
 various different values.
@@ -216,24 +216,24 @@ various different values.
 Since many of the ethical implications of this work are out of the scope of the project itself, it is especially important to highlight the work that is
 being accomplished in the community to address the various issues. The renewable energy field attempt to be as conscience as possible when considering
 the effects of installing renewable energies. This can be clearly seen in India's efforts to reduce emissions. A large consideration that India is taking
-into account when looking at installing renewable energy to meet their goals is the potential land use effects. [su12010281] In this study, they examine
+into account when looking at installing renewable energy to meet their goals is the potential land use effects. [@su12010281] In this study, they examine
 two approaches to installations: one explores placing new infrastructure in natural habitats or high production agriculture, while the second explores
-placing new infrastructure on lands already degraded by humans. [su12010281] It was discovered that putting wind turbines in already degraded areas and
+placing new infrastructure on lands already degraded by humans. [@su12010281] It was discovered that putting wind turbines in already degraded areas and
 installing solar panels on rooftops where possible, would lead to lesser land use impacts that utilizing natural habitats and agricultural spaces.
-[su12010281] This work points in a clear direction when concerning the practices that should be considered when developing new energy technologies
+[@su12010281] This work points in a clear direction when concerning the practices that should be considered when developing new energy technologies
 elsewhere in the world. Prioritizing already developed lands will mitigate the land  use impacts of renewable energy, effectively negating one of the
 biggest concerns with renewable energy.
 
 Another substantial concern deals with the negative socio-economic, environmental, and health effects that mining the resources needed for low-carbon
 technologies has on communities and individuals. When concerning the health of the environment, many countries have adopted rules an regulations that
 ensures sustainable mining practices are followed. Environmental Impact Assessment (EIA) is a tool used around the world that does just this.
-[singh2016environmental] The key scopes of this tool are to identify appropriate measures to mitigate the negative impacts of mining and to enhance the
+[@singh2016environmental] The key scopes of this tool are to identify appropriate measures to mitigate the negative impacts of mining and to enhance the
 benefits of mining through policy, where in the reach of this tool can benefit areas like soil contamination, all the way to biodiversity conservation
-[singh2016environmental] All of these positive environmental effects in turn will only seek to benefit the health of individuals in and around areas with
+[@singh2016environmental] All of these positive environmental effects in turn will only seek to benefit the health of individuals in and around areas with
 heavy mining operations. From a socio-economic lens, solutions become a bit trickier. While mining offers employment to many, it leaves some areas
 without jobs, creating large economic disparity. [@LOAYZA2016219] A solution being investigated deals with using past, abandoned mining operations as a
 catalyst for both environmental and economic growth. Bioreclamation of mined out areas brings back otherwise decimated habitats, as well as supplying
-jobs for communities that are unable to benefit from the positives of mining. [singh2016environmental] In the end, the negative consequences of mining
+jobs for communities that are unable to benefit from the positives of mining. [@singh2016environmental] In the end, the negative consequences of mining
 can be somewhat reversed through sustainable practices.
 
 
