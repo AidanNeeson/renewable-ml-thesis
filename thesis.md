@@ -159,6 +159,43 @@ generate many of the estimates, which has proven itself to be an accurate tool. 
 job at filling its role as being a simple design tool that gives companies, and potentially citizens, the ability to make informed decisions about the
 potential for solar installations. Yet, there exists still a multi-step process that a user must complete to gain access to accurate estimates.
 
+Another contribution from the NREL, PVWatts, establishes progress towards solving the problem posed by all of the previously mentioned tools: the
+necessity to follow a multi-step process and supply a vast amount of input parameters. The NREL PVWatts calculator is a web application that estimates
+electricity production of a grid-connected PV system based on a small number of trivial inputs. [osti_1158421] These inputs include values like array
+location, in the form of longitude and latitude, array size, array orientation, and some other optional parameters. Once filled out, the results of the
+calculation can be viewed, which portray the total estimated amount of solar irradiance and energy output both annually and monthly. [osti_1158421] It is
+important to note that the results are made so easily available due to the use of many assumptions about the system being examined. [osti_1158421]
+PVWatts is very simple, and with this comes some drawback relating to accuracy. It is documented in the version manual that errors can be high as ${\pm}
+$10% for annual energy totals and ${\pm}$30% for monthly values, potentially even reaching ${\pm}$20% and ${\pm}$40% respectively when regarding some
+edge cases. [osti_1158421] Errors being so high has the potential to be negative, but given the purpose of PVWatts, these values are quite reasonable.
+The goal of PVWatts is to give quick estimates of energy production from PV systems. [osti_1158421] This is something that the application does
+accomplish accurately enough in a majority of situations. There are still issues to be had regarding PVWatts, however. The information provided is very
+lightweight. In the end, all that a user receives is two estimates, even when there is a potential for substantially more information to be given.
+
+## Identified Gaps
+
+After examining some of the most prominent tools in the field, it becomes very clear that there are some gaps pertaining to the kinds of tools that are
+out there, and what each of the various tools offer to users. Much of the renewable simulation and estimation terrain is dominated by software similar to
+the NREL's SAM and PVsyst. That is, very complex and accurate analytical tools that offer up rigorous assessments of renewable systems, of which the vast
+majority are wholly inaccessible to those who are not dedicated researchers and project engineers. This is where tools like OpenSolar can be of some
+assistance, offering up a streamlined experience that walks users through designing and modeling a PV system, all the while abstracting all of the
+simulations being ran by SAM behind the scenes. Even still, OpenSolar, and applications alike, are tailored towards businesses trying to sell solar or
+individuals who are already serious about pursuing a solar installation. All of these tools make a similar assumption: the user knows enough about solar
+to establish informed decisions regarding installations. This is not always the case, which is where PVWatts can be of immense value. The ability to
+select a location and assess the area's viability for solar is not only a useful action for the demographic the aforementioned tools target, but it also
+helps to educate those who are unfamiliar with the field on the potential that PV systems posses. There are still missing pieces, though. PVWatts has the
+potential to supply information akin to what tools like PVsyst or SAM do, through the use of more assumptions the application is already built on.
+Furthermore, other renewables energy sources see less attention. It is no coincidence that PV system software was a main focus, as it sees the most
+attention in the field, while other technologies, like wind, do not posses tools similar to PVWatts that provide on demand information about the relative
+viability of a wind farm.
+
+With all of this information, a gap in the renewable energy installation field is very prevalent. A tool that can provide quick access to an abundance of
+metrics about renewable energy arrays is desperately needed. Too much of the industry is dominated by software that is too similar to one another, and
+not enough attention is put into software that can educate the public and onboard more people into the world of renewable energy. A tool that is as easy
+to use and as accurate as PVWatts that distributes an abundance of information similar to tools like SAM or PVsyst would be a substantial leap towards
+breaking down all of the barriers that prevent installation of renewable energy tehcnologies, leading to even more progress mitigating climate change
+impacts globally.
+
 
 # Method of approach
 
