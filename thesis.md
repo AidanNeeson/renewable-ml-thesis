@@ -20,7 +20,7 @@ water, infrastructure, and ecosystems. Temperature is the governing factor when 
 increasing. For perspective, the global annually averaged surface air temperature has risen by 1.8$^{\circ}$F (1.0$^{\circ}$C) over the last 115
 years. [@21558] This drastic increase in temperature has now marked the current period as the warmest in modern civilization's history. [@21558] More
 specifically, for the period 1986-2016 relative to 1901-1960, the global annual average temperature has increased by more than 1.2$^{\circ}$F
-(0.7$^{\circ}$C). Surface temperatures worldwide have also increased by up to 3.0 $^{\circ}$ F in some areas of the globe. [Figure 1] [@21558]
+(0.7$^{\circ}$C). Surface temperatures worldwide have also increased by up to 3.0$^{\circ}$F in some areas of the globe. [Figure 1] [@21558]
 
 ![The left panel indicates global average temperature readings relative to the 1901-1960 average. It showcases an overall increase over a span of about 120 years. Red bars represent temperatures higher than the average, while blue bars represent those that are lower than average. [@21558] The right panle indicates surface temperature changes (in $^{\circ}$F) for the period 1986-2016, relative to the same average. Gray represents missing data. [@21558]](images/es-1.png)
 
@@ -82,6 +82,13 @@ manifest themselves as direct health issues like respiratory impacts, cancers, o
 to mining, it is also important to discuss the social impacts that mining can have on certain communities. Peru showcases how mining affects the life of
 individuals societally by presenting large economic disparities based on geographic distance to mining centers. [@LOAYZA2016219] Taking these impacts
 into consideration, considerable controversy can be identified and applied to the installation of renewable sources.
+
+This project seeks to mitigate ethical issues, like those outlined above, as much as possible. But in this case, any attempt to address these ethical
+concerns within the scope of this research, would only limit the potential of the project. As many of the most important ethical issues that can be
+derived from the use of this tool are unintended consequences that stem from the field of renewable energy in general, the most effective way to help
+lessen the impacts would be to heavily advocate for the use of this tool by individuals and organizations that commit themselves to sustainable
+practices. However, limiting the use of this tool would then undermine the main purpose of this research. It seems that the efforts to limit the negative
+consequences must be addressed by the community as a whole, instead of within the scope of this project.
 
 
 # Related work
