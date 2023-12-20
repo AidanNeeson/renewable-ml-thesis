@@ -234,7 +234,7 @@ heavy mining operations. From a socio-economic lens, solutions become a bit tric
 without jobs, creating large economic disparity. [@LOAYZA2016219] A solution being investigated deals with using past, abandoned mining operations as a
 catalyst for both environmental and economic growth. Bioreclamation of mined out areas brings back otherwise decimated habitats, as well as supplying
 jobs for communities that are unable to benefit from the positives of mining. [singh2016environmental] In the end, the negative consequences of mining
-can be somewhat reversed through sustainable practices, which also bring potential growth to struggling communities.
+can be somewhat reversed through sustainable practices.
 
 
 # Method of approach
