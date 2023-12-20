@@ -123,7 +123,7 @@ and detailed report, with graphs, tables, and charts, that outline the performan
 timestep in a year, and calculating project cash flow over a designated multi-year period. These simulations can then be used to perform studies like
 parametric analysis, which examines relationships between input variables and results, or stochastic analysis, which creates histograms that showcase the
 sensitivity of results to input values. [@osti_1440404] A study was performed to validate the accuracy of SAM's predictions, and it was found that for all
-systems evaluated, the annual agreement between SAM-predicted and measured power production is within $\pm$3%. [@osti_1115788] Overall, the NREL's SAM
+systems evaluated, the annual agreement between SAM-predicted and measured power production is within $\pm$ 3%. [@osti_1115788] Overall, the NREL's SAM
 has shown itself to be a monumental step in being able to provide accurate information about a range of renewable energy arrays, even if it is tailored
 towards a very specific audience.
 
@@ -166,7 +166,7 @@ location, in the form of longitude and latitude, array size, array orientation, 
 calculation can be viewed, which portray the total estimated amount of solar irradiance and energy output both annually and monthly. [@osti_1158421] It is
 important to note that the results are made so easily available due to the use of many assumptions about the system being examined. [@osti_1158421]
 PVWatts is very simple, and with this comes some drawbacks relating to accuracy. It is documented in the version manual that errors can be high as
-$\pm$10% for annual energy totals and $\pm$30% for monthly values, potentially even reaching $\pm$20% and $\pm$40% respectively when considering
+$\pm$ 10% for annual energy totals and $\pm$ 30% for monthly values, potentially even reaching $\pm$ 20% and $\pm$ 40% respectively when considering
 some edge cases. [@osti_1158421] Errors being so high has the potential to be negative, but given the purpose of PVWatts, these values are quite 
 reasonable. The goal of PVWatts is to give quick estimates of energy production from PV systems. [@osti_1158421] This is something that the application
 does accomplish accurately enough in a majority of situations. There are still issues to be had regarding PVWatts, however. The information provided is
