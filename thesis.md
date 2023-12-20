@@ -123,7 +123,7 @@ and detailed report, with graphs, tables, and charts, that outline the performan
 timestep in a year, and calculating project cash flow over a designated multi-year period. These simulations can then be used to perform studies like
 parametric analysis, which examines relationships between input variables and results, or stochastic analysis, which creates histograms that showcase the
 sensitivity of results to input values. [@osti_1440404] A study was performed to validate the accuracy of SAM's predictions, and it was found that for all
-systems evaluated, the annual agreement between SAM-predicted and measured power production is within $\pm$ 3%. [@osti_1115788] Overall, the NREL's SAM
+systems evaluated, the annual agreement between SAM-predicted and measured power production is within $\pm$3%. [@osti_1115788] Overall, the NREL's SAM
 has shown itself to be a monumental step in being able to provide accurate information about a range of renewable energy arrays, even if it is tailored
 towards a very specific audience.
 
@@ -165,8 +165,8 @@ electricity production of a grid-connected PV system based on a small number of 
 location, in the form of longitude and latitude, array size, array orientation, and some other optional parameters. Once filled out, the results of the
 calculation can be viewed, which portray the total estimated amount of solar irradiance and energy output both annually and monthly. [@osti_1158421] It is
 important to note that the results are made so easily available due to the use of many assumptions about the system being examined. [@osti_1158421]
-PVWatts is very simple, and with this comes some drawback relating to accuracy. It is documented in the version manual that errors can be high as
-$\pm$ 10% for annual energy totals and $\pm$ 30% for monthly values, potentially even reaching $\pm$ 20% and $\pm$ 40% respectively when regarding
+PVWatts is very simple, and with this comes some drawbacks relating to accuracy. It is documented in the version manual that errors can be high as
+$\pm$10% for annual energy totals and $\pm$30% for monthly values, potentially even reaching $\pm$20% and $\pm$40% respectively when considering
 some edge cases. [@osti_1158421] Errors being so high has the potential to be negative, but given the purpose of PVWatts, these values are quite 
 reasonable. The goal of PVWatts is to give quick estimates of energy production from PV systems. [@osti_1158421] This is something that the application
 does accomplish accurately enough in a majority of situations. There are still issues to be had regarding PVWatts, however. The information provided is
@@ -199,17 +199,9 @@ impacts globally.
 ## Proposed Solutions
 
 This project produces a tool that fills the gap outlined in the above section. Through the use of the same data that software like the NREL's SAM, or
-PVsyst utilizes, this research takes a different approach to getting results that can be used to fulfill the needs described above. Machine learning is
-becoming more prevalent than ever before, with artificial intelligence and large language models dominating the computer science space currently. This
-project builds off of the power of machine learning to create a tool that can address the needs of the renewable energy field. Within the context of
-geographic data, of which the data this project uses resides, cluster analysis is seen as immensely useful in identifying groups of similar data points
-and performing detailed analysis of each group. [@tung2000geo] More specifically, K-means clustering is used to perform the grouping of data points. The
-K-means clustering algorithm takes an initial clustering that is not optimal and relocates each point in the cluster to its new nearest center, then
-updates the clustering centers by finding the mean of the member points, iteratively following this process until the convergence criteria is met, which
-in most cases is the defined number of iterations. [@Jin2010] These kinds of algorithms and models can be applied to the geographic data in question to
-effectively model the same results that SAM and PVsyst produce. The benefit of this solution is that it only takes a few inputs to perform the analysis.
-Combining it all together realizes a tool that is easy to use, as it has very few inputs, and has the ability to produce a wide range of predictions for
-various different values.
+PVsyst utilizes, this research takes a different approach to getting results that can be used to fulfill the needs described above.
+
+Machine learning is becoming more prevalent than ever before, with artificial intelligence and large language models dominating the computer science space. This project builds off of the power of machine learning to create a tool that can address the needs of the renewable energy field. Within the context of geographic data, of which the data this project uses resides, cluster analysis is seen as immensely useful in identifying groups of similar data points and performing detailed analysis of each group. [@tung2000geo] More specifically, K-means clustering is a fast algorithm used to perform the grouping of data points, excelling with large datasets. [@Jin2010] The K-means clustering algorithm works by taking an initial clustering of data points that is not optimal and relocates each point in the cluster to its new nearest center, then updates the clustering centers by finding the mean of the member points, iteratively following this process until the convergence criteria is met, which in most cases is the defined number of iterations. [@Jin2010] These kinds of algorithms and models can be applied to the geographic data in question to effectively model the same results that SAM and PVsyst produce. The benefit of this solution is that it only takes a few inputs to perform the analysis. Combining it all together realizes a tool that is easy to use, as it has very few inputs, and has the ability to produce a wide range of predictions for various different values.
 
 ## Ethical Progress
 
@@ -219,7 +211,7 @@ the effects of installing renewable energies. This can be clearly seen in India'
 into account when looking at installing renewable energy to meet their goals is the potential land use effects. [@su12010281] In this study, they examine
 two approaches to installations: one explores placing new infrastructure in natural habitats or high production agriculture, while the second explores
 placing new infrastructure on lands already degraded by humans. [@su12010281] It was discovered that putting wind turbines in already degraded areas and
-installing solar panels on rooftops where possible, would lead to lesser land use impacts that utilizing natural habitats and agricultural spaces.
+installing solar panels on rooftops where possible, would lead to lesser land use impacts than utilizing natural habitats and agricultural spaces.
 [@su12010281] This work points in a clear direction when concerning the practices that should be considered when developing new energy technologies
 elsewhere in the world. Prioritizing already developed lands will mitigate the land  use impacts of renewable energy, effectively negating one of the
 biggest concerns with renewable energy.
