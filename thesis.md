@@ -166,7 +166,7 @@ location, in the form of longitude and latitude, array size, array orientation, 
 calculation can be viewed, which portray the total estimated amount of solar irradiance and energy output both annually and monthly. [osti_1158421] It is
 important to note that the results are made so easily available due to the use of many assumptions about the system being examined. [osti_1158421]
 PVWatts is very simple, and with this comes some drawback relating to accuracy. It is documented in the version manual that errors can be high as
-${\pm}$ 10% for annual energy totals and ${\pm}$ 30% for monthly values, potentially even reaching ${\pm}$ 20% and ${\pm}$ 40% respectively when regarding
+$\pm$ 10% for annual energy totals and $\pm$ 30% for monthly values, potentially even reaching $\pm$ 20% and $\pm$ 40% respectively when regarding
 some edge cases. [osti_1158421] Errors being so high has the potential to be negative, but given the purpose of PVWatts, these values are quite 
 reasonable. The goal of PVWatts is to give quick estimates of energy production from PV systems. [osti_1158421] This is something that the application
 does accomplish accurately enough in a majority of situations. There are still issues to be had regarding PVWatts, however. The information provided is
