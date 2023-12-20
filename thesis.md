@@ -196,6 +196,22 @@ to use and as accurate as PVWatts that distributes an abundance of information s
 breaking down all of the barriers that prevent installation of renewable energy tehcnologies, leading to even more progress mitigating climate change
 impacts globally.
 
+## Proposed Solutions
+
+This project produces a tool that fills the gap outlined in the above section. Through the use of the same data that software like the NREL's SAM, or
+PVsyst utilizes, this research takes a different approach to getting results that can be used to fulfill the needs described above. Machine learning is
+becoming more prevalent than ever before, with artificial intelligence and large language models dominating the computer science space currently. This
+project builds off of the power of machine learning to create a tool that can address the needs of the renewable energy field. Within the context of
+geographic data, of which the data this project uses resides, cluster analysis is seen as immensely useful in identifying groups of similar data points
+and performing detailed analysis of each group. [tung2000geo] More specifically, K-means clustering is used to perform the grouping of data points. The
+K-means clustering algorithm takes an initial clustering that is not optimal and relocates each point in the cluster to its new nearest center, then
+updates the clustering centers by finding the mean of the member points, iteratively following this process until the convergence criteria is met, which
+in most cases is the defined number of iterations. [Jin2010] These kinds of algorithms and models can be applied to the geographic data in question to
+effectively model the same results that SAM and PVsyst produce. The benefit of this solution is that it only takes a few inputs to perform the analysis.
+Combining it all together realizes a tool that is easy to use, as it has very few inputs, and has the ability to produce a wide range of predictions for
+various different values.
+
+
 
 # Method of approach
 
