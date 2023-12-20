@@ -211,6 +211,30 @@ effectively model the same results that SAM and PVsyst produce. The benefit of t
 Combining it all together realizes a tool that is easy to use, as it has very few inputs, and has the ability to produce a wide range of predictions for
 various different values.
 
+## Ethical Progress
+
+Since many of the ethical implications of this work are out of the scope of the project itself, it is especially important to highlight the work that is
+being accomplished in the community to address the various issues. The renewable energy field attempt to be as conscience as possible when considering
+the effects of installing renewable energies. This can be clearly seen in India's efforts to reduce emissions. A large consideration that India is taking
+into account when looking at installing renewable energy to meet their goals is the potential land use effects. [su12010281] In this study, they examine
+two approaches to installations: one explores placing new infrastructure in natural habitats or high production agriculture, while the second explores
+placing new infrastructure on lands already degraded by humans. [su12010281] It was discovered that putting wind turbines in already degraded areas and
+installing solar panels on rooftops where possible, would lead to lesser land use impacts that utilizing natural habitats and agricultural spaces.
+[su12010281] This work points in a clear direction when concerning the practices that should be considered when developing new energy technologies
+elsewhere in the world. Prioritizing already developed lands will mitigate the land  use impacts of renewable energy, effectively negating one of the
+biggest concerns with renewable energy.
+
+Another substantial concern deals with the negative socio-economic, environmental, and health effects that mining the resources needed for low-carbon
+technologies has on communities and individuals. When concerning the health of the environment, many countries have adopted rules an regulations that
+ensures sustainable mining practices are followed. Environmental Impact Assessment (EIA) is a tool used around the world that does just this.
+[singh2016environmental] The key scopes of this tool are to identify appropriate measures to mitigate the negative impacts of mining and to enhance the
+benefits of mining through policy, where in the reach of this tool can benefit areas like soil contamination, all the way to biodiversity conservation
+[singh2016environmental] All of these positive environmental effects in turn will only seek to benefit the health of individuals in and around areas with
+heavy mining operations. From a socio-economic lens, solutions become a bit trickier. While mining offers employment to many, it leaves some areas
+without jobs, creating large economic disparity. [@LOAYZA2016219] A solution being investigated deals with using past, abandoned mining operations as a
+catalyst for both environmental and economic growth. Bioreclamation of mined out areas brings back otherwise decimated habitats, as well as supplying
+jobs for communities that are unable to benefit from the positives of mining. [singh2016environmental] In the end, the negative consequences of mining
+can be somewhat reversed through sustainable practices, which also bring potential growth to struggling communities.
 
 
 # Method of approach
