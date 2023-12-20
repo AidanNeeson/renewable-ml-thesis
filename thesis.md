@@ -123,7 +123,7 @@ and detailed report, with graphs, tables, and charts, that outline the performan
 timestep in a year, and calculating project cash flow over a designated multi-year period. These simulations can then be used to perform studies like
 parametric analysis, which examines relationships between input variables and results, or stochastic analysis, which creates histograms that showcase the
 sensitivity of results to input values. [osti_1440404] A study was performed to validate the accuracy of SAM's predictions, and it was found that for all
-systems evaluated, the annual agreement between SAM-predicted and measured power production is within ${\pm}$3%. [osti_1115788] Overall, the NREL's SAM
+systems evaluated, the annual agreement between SAM-predicted and measured power production is within $\pm$ 3%. [osti_1115788] Overall, the NREL's SAM
 has shown itself to be a monumental step in being able to provide accurate information about a range of renewable energy arrays, even if it is tailored
 towards a very specific audience.
 
