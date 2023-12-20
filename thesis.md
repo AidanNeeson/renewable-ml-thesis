@@ -127,6 +127,38 @@ systems evaluated, the annual agreement between SAM-predicted and measured power
 has shown itself to be a monumental step in being able to provide accurate information about a range of renewable energy arrays, even if it is tailored
 towards a very specific audience.
 
+An earlier tool, PVsyst, founded by André Mermoud and Michel Villoz, allows for a similar in-depth analysis, however, the focus is entirely on
+photovoltaic (PV) systems. PVsyst, similarly to SAM, was designed for a specific demographic that encompasses architects, engineers, and researchers of
+PV systems. [Mermoud_Villoz_2023] As such, the interface, process, models, and results are out of the scope of the general public. In spite of that,
+PVsyst does offer great tooltips and help menus to explain what is happening behind closed doors, which opens up the opportunity for individuals who
+otherwise would be unfamiliar with PV systems to educate themselves on certain concepts. [Mermoud_Villoz_2023] Regardless, the software carries with it
+an assumption that the user has a lot of the information internalized, however, these assumptions allow PVsyst to provide valuable, detailed metrics. The
+tool comes equipped with the ability to map out system design and sizing, simulate shading and grid storage, perform economic evaluations, and even
+simualte solar pumping systems. [Mermoud_Villoz_2023] All of these features that come with PVsyst also bring with them the necessity for a cumbersome
+amount of input parameters to carry out the simulations and modelings, so much so that the barrier to entry is even higher, further restricting who can
+effectively use the software. Nonetheless, PVsyst is a well maintained, early iteration into the field of renewable energy simulating and modeling, in so
+much as its impacts can be seen in other tools. Restrictions aside, it provides valuable insights into some of the most important results to be found
+when analyzing low-carbon technologies for both efficiency and cost.
+
+A large focus of many of the tools in this field are heavily focused on optimization and extracting as much information about an array as possible. SAM,
+PVsyst, and others, like Openwind, a software package aimed specifically at wind farms, are examples of these technologies. [Openwind_2023] Many private
+companies and citizens, however, do not need to know such specific details about renewable energy arrays. Most of the time, the information that is
+needed in the eyes of private companies looking at promoting or selling renewable energy does not extend past estimated energy output and cost of
+potential installations. This is where tools like OpenSolar become very valuable. OpenSolar is a free application that enables users to design and
+simulate annual energy production and costs for small residential and commercial PV systems. [Westbrook_Macpherson_Desharnais_2021] The end goal of the
+OpenSolar experience leads to the creation of a proposal, indicating a heavy skew towards this tool being used by companies selling solar to clients.
+Digital surface model data (DSM) is used to gather three-dimensional information of certain locations, which is then used for their shading models for
+energy production estimates, which culminate into the solar proposals that outline the viability of a given solar installation. These calculations are
+abstracted from the user, and while they have the option to input some of this information manually, most of it happens without the need to input any
+parameters. [Westbrook_Macpherson_Desharnais_2021] The bare minimum requirements that are needed to design a solar array and generate energy production
+and cost estimates is the location of the desired array, the cost of energy from utilities in the given location, and the desired solar modules and
+equipment to be used. While the design process is more interactive than inputting those three fragments of information, it is significantly less complex
+that other software like SAM, or PVsyst. The application also comes with a simple and easy to follow tutorial that greatly lowers the barrier to entry.
+This lack of complexity does not take away from the accuracy and effectiveness of OpenSolar's models, however. The NREL's SAM is utilized by OpenSolar to
+generate many of the estimates, which has proven itself to be an accurate tool. [Westbrook_Macpherson_Desharnais_2021] Overall, OpenSolar does a great
+job at filling its role as being a simple design tool that gives companies, and potentially citizens, the ability to make informed decisions about the
+potential for solar installations. Yet, there exists still a multi-step process that a user must complete to gain access to accurate estimates.
+
 
 # Method of approach
 
