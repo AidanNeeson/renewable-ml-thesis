@@ -93,6 +93,39 @@ consequences must be addressed by the community as a whole, instead of within th
 
 # Related work
 
+In this section, we provide a comprehensive review of some of the most prominent, existing tools and research that concerns modeling the performance and
+cost of low-carbon technologies, such as solar and wind power. We discuss their functionalities, strengths, weaknesses, and limitations, as a way to
+examine the various tools and research extensively. Analysis of the work in question serves two purposes: first, to provide a nuanced understanding of
+the existing landscape, and second, to aide in the identification of relevant and important gaps that serve as the focal point of this research.
+Subsequent to this evaluation, bespoke solutions are brought to light and, through the assistance of more academic literature, are intricately
+intertwined to provide a pathway for this project to fill the aforementioned gaps, and to supply a new solution to help overcome barriers to
+installations, as well as to assist in tackling the issue of climatic change.
+
+## Existing Tools
+
+The field of this research has seen many major strides regarding tooling that gives access to crucial information that is needed when considering,
+planning, installing, and maintaining renewable energy arrays. Much of the work is focused around assisting in the planning and installation process,
+which serves to overcome many of the barriers that present themselves when implementing renewable energy. These barriers get broken down by various
+methods depending on the tool being used. For example, some tools use complex analysis to provide the most accurate predictive models, dependent on
+hundreds of input parameters to ensure an array is as efficient and bankable as possible. On the other hand, some tools barely scratch the surface,
+supplying a very high-level analysis of an array, only making note of its potential energy output. Nonetheless, the collection of the most popular tools
+that exist serve to offer a range of experiences that provide the most relevant information based on what a user needs.
+
+One of the most impactful contributors to this field is the National Renewable Energy Laboratory (NREL). The researches at the NREL strive to produce
+accurate and useful tools and data for a wide range of consumers ranging from the general public, to private companies. The most influential of these
+tools is the NREL's System Advisor Model (SAM). The SAM is a techno-economic computer model that is designed to facilitate decision making for people who
+are strictly involved in the renewable energy industry. More specifically, is it tailored to be a resource for project managers and engineers, financial
+and policy analysts, technology developers, and researchers. [osti_1440404] This tool offers very in-depth analysis of a multitude of renewable energy
+arrays ranging from wind and solar, to geothermal and tidal. Each renewable energy source then has dozens of various input parameters that allow the user
+to adjust the array to fit their specifications, along with the inclusion of any relevant economic information. In the end, SAM provides a fully formated
+and detailed report, with graphs, tables, and charts, that outline the performance of multiple factors of the array and its financial implications.
+[osti_1440404] The simulations used to get to these conclusions consist of calculating the power output of a system for each hourly, or subhourly,
+timestep in a year, and calculating project cash flow over a designated multi-year period. These simulations can then be used to perform studies like
+parametric analysis, which examines relationships between input variables and results, or stochastic analysis, which creates histograms that showcase the
+sensitivity of results to input values. [osti_1440404] A study was performed to validate the accuracy of SAM's predictions, and it was found that for all
+systems evaluated, the annual agreement between SAM-predicted and measured power production is within ${\pm}$3%. [osti_1115788] Overall, the NREL's SAM
+has shown itself to be a monumental step in being able to provide accurate information about a range of renewable energy arrays, even if it is tailored
+towards a very specific audience.
 
 
 # Method of approach
