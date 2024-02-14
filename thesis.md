@@ -70,6 +70,66 @@ Another substantial concern deals with the negative socio-economic, environmenta
 
 # Method of approach
 
+- overview of what this sections seeks to accomplish
+
+## Data
+
+- Talk about data in general
+    - Its importance, what makes it good and valid
+- Highlight the importance of my data
+    - geospatial
+    - energy related
+    - high-level
+    - easy to comprehend
+- Highlight the issue posed by some? of the algorithms to be discussed
+    - not able to interpret long and lat easily, prefers an encoded location in one value
+    - clustering does this!
+- Talk about the use of clustering for this project
+    - prove it still retains the qualities of longitude and latitude, like spatial orientation, shape, and correlations.
+- Highlight my approach to data
+    - two-faced: raw data, and clustered data.
+    - both types of data are used for training and testing.
+    - highlight trade-off -> more models = more training and testing time, but wider experiment scope and better results.
+- End with an indication that the extra time is worth it to ensure the values are as accurate as possible as that is the goal of the paper
+
+## Machine Learning
+
+- Reintroduce it broadly, but briefly (a few sentences)
+- Talk about its importance/relevance in my field; how it is used/can be used.
+- Argue it is a viable approach to getting the information I want
+- Highlight the models that I want to use
+- backup their purpose
+- insert table that maps each model to a source for easy look-up
+
+## Support Vector Machines
+
+- starting with least accurate (for now)
+- introduce what it is
+- talk about its usefullness; strengthes and weaknesses
+- walk through the process of my use of it
+- insert charts/diagrams where possible
+
+## Random Forest
+
+- introduce what it is
+- talk about its usefullness; strengthes and weaknesses
+- walk through the process of my use of it
+- insert charts/diagrams where possible
+
+## Artificial Neural Network
+
+- introduce what it is
+- talk about its usefullness; strengthes and weaknesses
+- walk through the process of my use of it
+- insert charts/diagrams where possible
+
+## Experimental Metrics
+
+- introduce each metric/process:
+    - k-fold
+    - r2 score
+    - TBD...
+- talk about what they are, what they are used for , what they show, why they are important <- (maybe saved for design section)
 
 
 # Experiments
