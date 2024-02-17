@@ -2,11 +2,11 @@
 # https://maehr.github.io/academic-pandoc-template/
 
 # Project-specific values
-title: 'Senior Thesis'
-author: 'Student Name'
-date: '22 July 2022'
-firstreader: 'First Reader'
-secondreader: 'Second Reader'
+title: 'Predicting Renewable Energy Array Parameters Using Cluster Analysis Trained on Geographic Data'
+author: 'Aidan Neeson'
+date: '19 December 2023'
+firstreader: 'Gregory M. Kapfhammer'
+secondreader: 'Douglas Luman'
 logo: 'images/logo'
 
 # Template Values: DO NOT TOUCH
