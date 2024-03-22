@@ -116,15 +116,15 @@ To get the states that each wind farm and solar array resides in, a library call
 
 For the wind data, it is critical that the new calculation method incorporates some locational information. In the starting dataset, the wind speed feature holds this potential as it varies depending on location. A formula for calculating the power in the wind utilizes wind speed, and serves as a good starting point for getting to generated energy in a way that is less dependent on capacity. the formula is defined as follows, where $\rho$ is the density of air, $A$ is the swept area of the wind turbine, and $v$ is the wind speed:
 
-$\[ P = \frac{1}{2}\rho A v^3 \]$ [@sarkar2012wind].
+$ P = \frac{1}{2}\rho A v^3 $ [@sarkar2012wind].
 
 For the purposes of simplicity and consistency, some values here are constant, those being $\rho = 1.225kg/m^2$ and $A = 7854m^2$, which assumes each wind turbine blade is 50 meters in length. With this value, available energy can be calculated by scaling the value up with how many turbines make up a wind farm. This value is found through the capacity, where it is assumed that each wind turbine account for 2 megawatts of capacity. We then multiply by the number of hours in a year, as we are interested in the per-year energy generation. This equation is defined as follows, where $c$ is the capacity, $P$ is the available wind power, and $h$ in the number of hours is a year, which equals 8760 hours:
 
-$\[ J_a = \frac{c}{2}Ph \]$.
+$ J_a = \frac{c}{2}Ph $.
 
 To get to generated energy, all that is left is to multiply by the capacity factor to account for the inefficiencies and downtimes of a wind turbine or wind farm. This results in a final equation for generated energy as follows, where $c_f$ is the capacity factor:
 
-$\[ J = \frac{c}{2}\left( \frac{1}{2}\rho Av^3\right)h c_f \]$
+$ J = \frac{c}{2}\left( \frac{1}{2}\rho Av^3\right)h c_f $
 
 Now to get cost, just multiply this generated energy value by the LCOE and the number of years the technology would be in use. For this research, a lifespan of twenty years was chosen for both wind and solar applications. A similar approach was taken to calculate the generated energy and cost for the solar data, but due to the way energy generation is calculated when considering solar panels, it ends up being circular, resulting in the solar dataset still being biased, skewed heavily towards capacity. Each individual solar panel is given a certain wattage rating, which defines how much energy a panel generates under ideal conditions. When considering an array of panels, the wattage ratings combine and manifest as the capacity of a solar array. Unlike with the wind data, the wind speed equivalent, solar irradiance, is represented in units that align with ideal operating conditions. This makes it impossible to calculate generated energy, and therefore cost, without capacity being the dominating feature. For this reason, the solar data was deemed insufficient for the goals of this project. Experiments were still performed using it as a way to validate these conclusions, and more will be discussed regarding the issues with the solar data in the experiments section. Nonetheless, with newly calculated values for generated energy and cost, the datasets are completely realized, so machine learning algorithms can now process them and arrive at meaningful predictions.
 
