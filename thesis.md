@@ -114,9 +114,9 @@ Table: New features added to the dataset to support the refactoring process.
 
 To get the states that each wind farm and solar array resides in, a library called `geopy` was used. `geopy` is a Python client for several geocoding web services that simplifies the process of interacting with API's and boils it down into one simple process that somewhat navigates the usual hurdles of API's like slow speeds and rate limits [@geopy]. Using this library, the longitude and latitude coordinates were passed in, and the state was then extracted and added to the comma separated value file (CSV) for both datasets. Because the datasets were so large, this process took nearly a day to complete. Being able to classify each set of coordinates into a state opens up the possibilities for incorporating more features, and spreading the importance across the entire dataset, instead of capacity being the dominating feature. More specifically, it allows for the incorporation of a generator's LCOE. LCOE changes from state to state, so using this value to calculate a cost estimate makes longitude and latitude more important features. The values for LCOE were gathered from NREL's State and Local Planning for Energy (SLOPE) data library [slope_2020]. The values were taken manually from the data viewer and put into a CSV. The datasets were iterated through and the LCOE was mapped to the matching state. The units for LCOE are dollars per megawatt-hour, meaning it depends on generated energy. The value from the initial dataset is heavily biased, so a new way to calculate generated energy needs to be implemented for both the wind and solar data.
 
-For the wind data, it is critical that the new calculation method incorporates some locational information. In the starting dataset, the wind speed feature holds this potential as it varies depending on location. A formula for calculating the power in the wind utilizes wind speed, and serves as a good starting point for getting to generated energy in a way that is less dependent on capacity. the formula is defined as follows, where $\rho$ is the density of air, $A$ is the swept area of the wind turbine, and $v$ is the wind speed:
+For the wind data, it is critical that the new calculation method incorporates some locational information. In the starting dataset, the wind speed feature holds this potential as it varies depending on location. A formula for calculating the power in the wind utilizes wind speed, and serves as a good starting point for getting to generated energy in a way that is less dependent on capacity. the formula is defined as follows, where $\rho$ is the density of air, $A$ is the swept area of the wind turbine, and $v$ is the wind speed [@sarkar2012wind]:
 
-$P=\frac{1}{2}Av^3\rho$ [@sarkar2012wind].
+$P=\frac{1}{2}Av^3\rho$.
 
 For the purposes of simplicity and consistency, some values here are constant, those being $\rho = 1.225kg/m^2$ and $A = 7854m^2$, which assumes each wind turbine blade is 50 meters in length. With this value, available energy can be calculated by scaling the value up with how many turbines make up a wind farm. This value is found through the capacity, where it is assumed that each wind turbine accounts for 2 megawatts of capacity. We then multiply by the number of hours in a year, as we are interested in the per-year energy generation. This equation is defined as follows, where $c$ is the capacity, $P$ is the available wind power, and $h$ in the number of hours is a year, which equals 8760 hours:
 
@@ -197,15 +197,15 @@ Table: The chosen evaluation metrics, their dependence on scale, and a descripti
 
 R-squared represents the proportion of variance in the dependent variables that can be explained by the independent variables [@WALKER2020109705] [@RENAUD20101852]. The closer the R-squared value is to one, the better the model is performing. It is considered a valid metric for measurement due to its wide use as an indicator in statistical analysis [@WALKER2020109705]. In the equation below, $\hat{y}$ and $y$ represent the predicted and actual values respectively and $\bar{y}$ represents the mean of the observations.
 
-$R^2=1-\frac{\sum_{i=1}^{n}(y_i-\hat{y}_i)^2}{\sum_{i=1}^{n}(y_i-\bar{y}_i)^2}$
+$$R^2=1-\frac{\sum_{i=1}^{n}(y_i-\hat{y}_i)^2}{\sum_{i=1}^{n}(y_i-\bar{y}_i)^2}$$
 
 RMSE represents the magnitude of the difference in the distance between the predicted values and the actual values [@KARUNASINGHA2022609]. RMSE is heavily dependent on the scale of the data and the number of observations [@FAN2017222]. This means that the RMSE by itself has that potential to be somewhat meaningless. When considering the data used for this project, RMSE falls into the category of being potentially meaningless. As such, when analyzing the models in detail, RMSE will be situated fully in the context of the data, and even calculated to obtain scale-independent insights from it. In the equation below, $\hat{y}$ and $y$ represent the predicted and actual values respectively.
 
-$RMSE=\sqrt{\frac{\sum_{i=1}^{n}(\hat{y}_i-y_i)^2}{n}}$
+$$RMSE=\sqrt{\frac{\sum_{i=1}^{n}(\hat{y}_i-y_i)^2}{n}}$$
 
 Mean absolute percentage error depicts the mean error between the predicted and actual values expressed as a relative percentage [@mape] [@DEMYTTENAERE201638]. Typically, if the MAPE value is below 10%, it is considered highly accurate. If it is between 10% and 20%, it is considered good forecasting. MAPE being between 20% and 50% indicated reasonable forecasting. Anything greater than 50% is considered poor forecasting [@mape]. In the equation below, $\hat{y}$ and $y$ represent predicted and actual values respectively.
 
-$MAPE=\frac{1}{n}\sum_{i=1}^{n}\frac{|\hat{y}_i-y_i|}{|y_i|}$
+$$MAPE=\frac{1}{n}\sum_{i=1}^{n}\frac{|\hat{y}_i-y_i|}{|y_i|}$$
 
 ### K-Fold Cross-Validation
 
@@ -256,6 +256,7 @@ Overall, these results indicate that the random forest regression models the dat
 ### Support Vector Regression
 
 ![Support vector regression model's predictions of generated energy against each of the input features transposed on top of a scatter plot of the raw data of the feature in question.](images/svm-generated-energy-vs-inputs.png)
+
 ![Support vector regression model's predictions of cost against each of the input features transposed on top of a scatter plot of the raw data of the feature in question.](images/svm-cost-vs-inputs.png)
 
 Examining the graphs shows that the support vector regression is potentially not performing up to standards. Unlike the random forest, the SVR predictions follow an almost horizontal line. Ideally, some curvature would be seen to indicate that the model is responding to the data and fitting the prediction accordingly. This lack of responsiveness can likely be attributed to the way SVM and SVR arrive at predictions. To reiterate, they plot a hyperplane that attempts to maximize a margin by including as many points as possible within a certain area around the curve. Due to the density of the dataset, the hyperplane may not see any reason to curve to fit the data better, as it can maximize the margin by going relatively straight horizontally. This is all speculation, of course, and does not serve to truly analyze the SVR's performance. To do this, we use k-fold cross-validation. SVR does not support multi output, so two separate rounds of cross validation had to be run for each target, resulting in two tables.
@@ -299,6 +300,7 @@ For the cost predictions, the R-squared as a minimum value of -0.000417 and a ma
 ### MLPRegression
 
 ![Artificial neural network's predictions of generated energy against each of the input features transposed on top of a scatter plot of the raw data of the feature in question.](images/ann-generated-energy-vs-inputs.png)
+
 ![Artificial neural network's predictions of cost against each of the input features transposed on top of a scatter plot of the raw data of the feature in question.](images/ann-cost-vs-inputs.png)
 
 The graphs, depending on interpretation, indicate both that the ANN could be performing well, or that it is performing poorly. This is because the curve is relatively straight, but it does move in response to the data, unlike the SVR. Looking deeper at each individual curve, for latitude and longitude the curves seem to indicate good fits. The lines move with the data, following the most dense points, however the capacity curve shows the opposite. With the random forest's capacity curve, the number of predictions at 16 MW in capacity was a lot higher, and the variance in those predictions was spread out across nearly all possible output values. This made sense because the dataset is full of mostly 16 MW capacity wind farms. For the ANN's capacity curves, this is not represented. Instead, it seems to be giving equal weight to all of the various capacities, which does not represent the data at all. In the end, the graphs are hard to interpret and do not give a clear picture for how ANN performs with this application. The results of k-fold cross-validation serve to fill in these gaps and outline the performance of ANN.
