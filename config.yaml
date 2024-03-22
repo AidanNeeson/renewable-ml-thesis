@@ -2,7 +2,7 @@
 # https://maehr.github.io/academic-pandoc-template/
 
 # Project-specific values
-title: 'Predicting Renewable Energy Array Parameters Using Cluster Analysis Trained on Geographic Data'
+title: 'Assessing the Viability and Accuracy of Machine Learning Models At Predicting Renewable Energy Array Parameters'
 author: 'Aidan Neeson'
 date: '19 December 2023'
 firstreader: 'Gregory M. Kapfhammer'
