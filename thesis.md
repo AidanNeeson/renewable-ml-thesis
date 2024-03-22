@@ -154,7 +154,7 @@ For this project, its use consisted of implementing the standard random forest r
 
 The large size of the tree indicates that the model worked extensively to arrive at predictions. This potentially means that the data cannot be represented in a simple manner, and instead needs a more complex relationship to describe it. Nonetheless, this is just one tree from the forest. Other trees may have different split conditions at each level, but all trees had similar depth, which cannot be visualized feasibly.
 
-### Support Vector Machines
+### Support Vector Machine
 
 Support vector machine is a robust learning algorithm for solving linear and non-linear problems, and it can also be used for both regression and classification purposes [@WALKER2020109705]. In general, SVM is used to find an optimal hyperplane that separates the data with a maximum margin [@Smola2004]. The margin's goal is to encompass as many data points as possible, with the intention being that hitting more data points leads to more accurate fits [@Smola2004].
 
@@ -172,25 +172,169 @@ First, the hidden layers had to be defined. Some rule-of-thumb methods provide a
 
 With this dataset, the ANN had difficulties converging. Because of this, the maximum number of iteration was set to 100 billion to ensure convergence on a consistent basis. The last hyperparameter that was set was the solver. `Lbfgs` was chosen as it significantly sped up training time and yielded better results than other solvers on average. 
 
+
 # Experiments
 
-
+In this section, we describe the experimental methodologies and procedures employed to investigate the viability of simple machine learning models at predicting renewable energy array parameters that are trained on locational data. Our approach to experimentation was guided by a rigorous framework aimed at generating reliable and meaningful results. We detail the design of our experiments, the variables and metrics studied, the efforts taken to ensure the accuracy and validity of the findings, and the results themselves. The experiments were conducted in an organized fashion, following established methods and industry standards. By adhering to said standards, we aimed to minimize the bias in the results and obtain robust data than serves purpose and could contribute significantly to fulfilling the goals of the research.
 
 ## Experimental Design
 
+The general overview for the experimental process of this study involves examining the performance of each model individually. All three models are broken down and evaluated based on standard metrics and testing practices for the field. The evaluation was completed using the same frameworks that constructed the website and housed the processes of generating models. The goal and benefit of doing this is to promote reproducibility and validate that the methodology used to document the processes and contain the source code is effective overall. The true importance of the evaluation is to determine how well the models perform when trained on locational data. To facilitate this, careful decisions were made to ensure that this is exactly what is being tested. To reiterate, each model was trained with the same three input features: latitude, longitute, and capacity. Not only does this ensure consistency across all algorithms being tested, but it also fulfills the requirement of locational data being used, with the exception of capacity being used simply as a scaling factor. While there are many more features present in the datasets, many of them are irrelevant when seated next to the targets: generated energy and cost. Any other features that are connected to the targets, would only serve to supply the algorithms with too much information, invalidating the predictions, as the relationship between features and targets would, in a way, be handed to the models. This is not a desirable outcome and ultimately would result in meaningless conclusions.
+
+The sufficiently trained models are evaluated in a way that ensures as little bias from the dataset as possible affects the outcomes. The method for doing so is an industry standard, that being, k-fold cross-validation [@doi:10.1080/00401706.1977.10489581]. The k-fold cross-validation suite used in this project leverages three metrics for measuring the performance of each model. Using multiple metrics that each measure a different quality of the model ensures that as much information about the models' performance is documented and able to be critically analyzed. This not only tells a more complete story about the models, but it also gives crucial insights into the entire dataset, validating all of the many moving parts of this project.
+
+### Metrics
+
+The use of various metrics helps to bolster the results of evaluation. For this project, three metrics were chosen that seek to best measure the effectiveness of the models based on the datasets. The datasets in question are very dense, and have many outliers and high variance. Because of this, the scale of the data is an important factor when considering evaluation. This can lead to misleading metrics or inflated scores, both good and bad, which confuse the results and lead to them being less valid. For these reasons, both scale-dependent and scale-independent evaluation metrics were chosen with the belief that including both view points opens up the results for discussion, and that it leads to more transparent results. Below is a table outlining the chosen metrics. Each of the metrics below have proven themselves as useful for interpreting results in energy-based and geospatial applications [@RENAUD20101852] [@DEMYTTENAERE201638] [@WALKER2020109705]. It is for these reasons that they were chosen for the purpose of evaluation for this project. For consistency, all metrics were obtained through the use of `scikit-learn's` metrics package.
+
+Table: The chosen evaluation metrics, their dependence on scale, and a description of what they measure.
+
+| Metric | Type | Description |
+|:------------------------------------|:----------------|:-------------------------|
+|Coefficient of determination ($R^2$) |Scale-independent|A goodness-of-fit metric that measures explained variance.|
+|Root mean square error (RMSE)        |Scale-dependent  |Measures the magnitude of the difference between predicted and actual values.|
+|Mean absolute percentage error (MAPE)|Scale-independent|A goodness-of-fit metric that measures the relative error of predictions.|
+
+R-squared represents the proportion of variance in the dependent variables that can be explained by the independent variables [@WALKER2020109705] [@RENAUD20101852]. The closer the R-sqaured value is to one, the better the model is performing. It is considered a valid metric for measurement due to its wide use as an indicator in statistical analysis [@WALKER2020109705]. In the equation below, $\hat{y}$ and $y$ represent the predicted and actual values respectively and $\bar{y}$ represents the mean of the observations.
+
+$R^2=1-\frac{\sum_{i=1}^{n}(y_i-\hat{y}_i)^2}{\sum_{i=1}^{n}(y_i-\bar{y}_i)^2}$
+
+RMSE represents the magnitude of the difference in the distance between the predicted values and the actual values [@KARUNASINGHA2022609]. RMSE is heavily dependent on the scale of the data and the number of observations [@FAN2017222]. This means that the RMSE by itself has tht potential to be somewhat meaningless. When considering the data used for this project, RMSE falls into the category of being potentially meaningless. As such, when analyzing the models in detail, RMSE will be situated fully in the context of the data, and even calculated with to obtain scale-independent insights from it. In the equation below, $\hat{y}$ and $y$ represent the predicted and actual values respectively.
+
+$RMSE=\sqrt{\frac{\sum_{i=1}^{n}(\hat{y}_i-y_i)^2}{n}}$
+
+Mean absolute percentage error depicts the mean error between the predicted and actual values expressed as a relative percentage [@mape] [@DEMYTTENAERE201638]. Typically, if the MAPE value is below 10%, it is considered highly accurate. If it is between 10% and 20%, it is considered good forecasting. MAPE being between 20% and 50% indicated reasonable forecasting. Anything greater than 50% is considered poor forecasting [@mape]. In the equation below, $\hat{y}$ and $y$ represent predicted and actual values respectively.
+
+$MAPE=\frac{1}{n}\sum_{i=1}^{n}\frac{|\hat{y}_i-y_i|}{|y_i|}$
+
+### K-Fold Cross-Validation
+
+A single report of the above metrics on a model trained on a particular split of the data can give quick insights into the performance of the model. However, it does not tell the full story, in fact, it leaves out so much information nested within the dataset that a single report is relatively meaningless. To combat this, a strategy must be employed to reduce the bias inherent in only examining a dataset one way. The standard and accepted way to do this is through the use of k-fold cross-validation. K-fold cross-validation is the process of splitting the dataset into two parts, using one part called a training set to establish a means for predictions and then using the testing set to evaluate to quality of the predictions, and then repeating the process $k$ times, establishing unique splits for each fold [@MahmoodKhan+2009].
+
+![The process of k-fold cross-validation on a dataset.](images/k-fold-diagram.png)
+
+What this ends up doing is ensuring that the model is getting the full picture regarding the dataset, in that all possible splits for a dataset are being used in training [@doi:10.1080/00401706.1977.10489581]. This heavily reduces bias in the experimentation and results as now the model is not subject to the inherent bias of a single split [@doi:10.1080/00401706.1977.10489581]. It averages the experimental metric used over the entire dataset, which represent values like R-squared, RMSE, and MAPE fairly for the application. Consequently, it then supplies a rigid interpretation of the performance of a model, allowing for conclusions to be made about the effectiveness of machine learning for this application. To perform k-fold cross-validation for this project, `scikit-learn's` built-in functionality for cross-validation was leveraged.
+
 ## Evaluation
+
+At least two things are examined when evaluating each model's performance. First, a graphical representation of the model's predictions of each target variable against each of the respective input features. What this does is allow for visual analysis of how a model is interpreting each feature and using it to arrive at a prediction. Visual analysis of this form does not serve as hard statistical evidence of a model's performance, however, it does supply notions of how a model is potentially performing. Secondly, k-fold cross-validation scores will be examined for each model. For this project, ten folds were chosen, as computation time needed to be balanced with robust results. For some models, other model-specific evaluation tactics can be employed to further reinforce hypotheses.
+
+The results discussed below are specifically concerning the wind data. As noted before, the solar data was deemed insufficient for the goals of the project, and the results of the following analysis reinforced this idea. The scores for R-squared were suspiciously high, nearing exactly 1, while RMSE and MAPE were indescribably high. This was the case for every model trained on the solar data. This is a clear indication that the dataset is flawed and cannot be used to perform the desired analysis in a meaningful way. Because of this, the results will not be covered in detail in the following subsections, as to minimize unnecessary confusion.
+
+### Random Forest Regression
+
+Starting with the graphical representation of the model, we can get a sense for how the model may be performing within the context of the data it is trying to model. Here, there are two sets of graphs, one that examines the relationships for each of the output targets, In each set, there are three graphs that portray the relationship between the output target and one of the input features. The blue represent the data points and the red represents the line generated by connecting the model's predicted values together, which ends up showing how the model interprets the feature being plotted.
+
+![Random forest regression model's predictions of generated energy against each of the input features transposed on top of a scatter plot of the raw data of the feature in question.](images/rf-generated-energy-vs-inputs.png)
+![Random forest model's predictions of cost against each of the input features transposed on top of a scatter plot of the raw data of the feature in question.](images/rf-cost-vs-inputs.png)
+
+When looking at the graphs, it is important to keep in mind that the predictions the model makes are made when considering all of the input features at the same time, however, it was only feasible to graph one input feature at a time due to how dense the data is. Looking at the plots, it is clear that the random forest is determining some kind of relationship within the data. This is clear because of the presence of a curve that is vaguely quadratic in nature. The most interesting and promising notion these plots give is that capacity is being treated more as a scaling quantity. We can assume this as the majority of the variation in predictions occurs when capacity equals 16 MW, this indicates that the model is finding a relationship between the other input features and the targets, and is using that as the main driver for predictions. To verify this idea, a feature importance graph can be used. One aspect of random forests that provides information into how the model is making use of the input features, is feature importances. These importances indicate the frequency that a given feature is used to determine a split in the tree [@Strobl2009-wi]. Ideal feature importances would portray an even spread of importance across all input variables, however, this ideal can change depending on the goal on the analysis.
+
+![Feature importances for the three input features used to train the random forest model.](images/rf-feature-impotrances.png)
+
+While the graph goes not portray an even spread of importance, it does fit the goals of the analysis and feature selection. Longitude and latitude are meant to be the driving factors, while capacity is a supporting feature meant to scale predictions up and down depending on farm size. This feature importance chart shows just this, with latitude and longitude being used more often to determine splits than capacity. These insights do not provide hard evidence that the model is performing well, however. For this, we must turn to the results of k-fold cross-validation. The table below outlines the k-fold cross-validation results from training and testing the multioutput random forest regression.
+
+Table: 10-fold cross-validation results for random forest regression.
+
+|        | Fit time (s) | Score time (s) | R-squared | RMSE | MAPE |
+|:-------|:-----|:--------|:--------|:---------|:----|
+|        |35.63 |0.412    |0.9086   |3244508   |0.126|
+|        |35.08 |0.408    |0.9099   |3194235   |0.134|
+|        |34.78 |0.409    |0.9127   |3128678   |0.130|
+|        |34.81 |0.402    |0.9082   |3253428   |0.126|
+|        |34.87 |0.405    |0.9073   |3241619   |0.137|
+|        |34.48 |0.417    |0.9156   |3113150   |0.138|
+|        |35.35 |0.434    |0.9081   |3232867   |0.148|
+|        |37.66 |0.456    |0.9154   |3138264   |0.138|
+|        |37.00 |0.440    |0.9133   |3138594   |0.128|
+|        |34.93 |0.409    |0.9107   |3132047   |0.134|
+|**Averages**|**35.46**|**0.419**|**0.9110**|**3181739**|**0.134**|
+
+Overall, these results indicate that the random forest regression models the data very well and predicts the data effectively. For R-squared, a minimum value of 0.9082 and a maximum of 0.9156 shows very little variation in the scores, which indicates that the date is consistent in its representation and how the model interprets it. An average score of 0.9110 demonstrates a very good fit, in that the model is able to explain about 91% of the variance in the dataset. The same interpretation can be gathered from MAPE as well. With a minimum value of 12.6% and a maximum value of 13.8%, there is also not a substantial amount of variation in the scores, further exemplifying the dataset and model's consistency. An average of 13.4% falls within the bounds for good forecasting. RMSE is a bit trickier to interpret as the value looks much higher than we would like. RMSE is heavily scale-dependent, and the data used has a large range, which inflates the RMSE by a substantial amount. Considering it relative to the dataset, however, gives a better picture of what it indicates. To do this, the RMSE must be divided by the mean(s) of the dataset targets. Doing so results in a relative RMSE of 0.16. This value aligns a lot better with the other two scores, and further shows how well the random forest is performing, since RMSE is a lesser-is-better score.
+
+### Support Vector Regression
+
+![Support vector regression model's predictions of generated energy against each of the input features transposed on top of a scatter plot of the raw data of the feature in question.](images/svm-generated-energy-vs-inputs.png)
+![Support vector regression model's predictions of cost against each of the input features transposed on top of a scatter plot of the raw data of the feature in question.](images/svm-cost-vs-inputs.png)
+
+Examining the graphs shows that the support vector regression is potentially not performing up to standards. Unlike the random forest, the SVR predictions follow an almost horizontal line. Ideally, some curvature would be seen to indicate that the model is responding to the data and fitting the prediction accordingly. This lack of responsiveness can likely be attributed to the way SVM and SVR arrive at predictions. To reiterate, they plot a hyperplane that attempts to maximize a margin by including as many points as possible within a certain area around the curve. Due to the density of the dataset, the hyperplane may not see any reason to curve to fit the data better, as it can maximize the margin by going relatively straight horizontally. This is all speculation, of course, and does not serve to truly analyze the SVR's performance. To do this, we use k-fold cross-validation. SVR does not support multioutput, so two separate rounds of cross validation had to be ran for each target, resulting in two tables.
+
+Table: 10-fold cross-validation results for support vector regression predicting energy generation.
+
+|        | Fit time (s) | Score time (s) | R-squared | RMSE | MAPE |
+|:-------|:-----|:--------|:--------|:---------|:----|
+|        |771.96|90.78    |0.00292  |31909.96  |1.151|
+|        |771.08|90.63    |0.00241  |31278.96  |1.195|
+|        |758.96|90.29    |0.00315  |31580.60  |1.276|
+|        |740.48|88.98    |0.00167  |31700.50  |1.159|
+|        |736.54|88.92    |0.00129  |31842.20  |1.262|
+|        |737.67|89.01    |0.00059  |31694.97  |1.201|
+|        |736.01|89.16    |0.00236  |31440.66  |1.128|
+|        |738.92|88.80    |0.00215  |31583.35  |1.274|
+|        |738.56|88.79    |0.00088  |32331.06  |1.176|
+|        |737.22|88.77    |0.00102  |31944.96  |1.152|
+|**Averages**|**746.74**|**89.41**|**0.00185**|**31730.72**|**1.197**|
+
+Table: 10-fold cross-validation results for support vector regression predicting cost.
+
+|        | Fit time (s) | Score time (s) | R-squared | RMSE | MAPE |
+|:-------|:-----|:--------|:--------|:---------|:----|
+|        |401.45|88.84    |-0.000394|1.963845e+07|0.926|
+|        |401.82|89.09    |-0.000016|1.952591e+07|0.965|
+|        |400.95|88.84    |-0.000417|1.976890e+07|1.022|
+|        |401.10|88.82    |-0.000002|1.964222e+07|0.947|
+|        |400.62|88.75    |-0.000103|1.992799e+07|1.014|
+|        |401.31|89.03    |-0.000370|1.971245e+07|0.962|
+|        |401.16|88.77    |-0.000006|1.930747e+07|0.919|
+|        |400.54|88.88    | 0.000005|1.968026e+07|1.020|
+|        |400.70|88.82    |-0.000183|2.014325e+07|0.955|
+|        |407.29|88.97    |-0.000225|1.995599e+07|0.922|
+|**Averages**|**401.69**|**87.77**|**-0.000171**|**1.973028e+07**|**0.956**|
+
+Overall, these scores indicate that the SVR performs very poor for this specific application, and reinforces the inferences that were drawn from the graphs. Starting with generated energy, the R-squared has a minimum value of 0.00059 and a maximum value of 0.00315. This is a fairly large difference, especially compared to the random forest. However, all of the R-squared values are consistent enough to indicate that the data poses few inconsistencies for the SVR. But with an average R-squared of 0.00185, the model accounts for almost none of the variance in the data. In general, the SVR models a very poor fit to the data. The MAPE adds to this as well. Relative consistency is shown with a minimum value of 112.8% and a maximum value of 127.6%, and the average value of 119.7% indicates that each prediction is off by nearly 120%, which makes sense when considering the curve drawn by the model is essentially a straight line down the middle. RMSE here looks better than the RMSE for the random forest, but relative to the data it is actually worse. SVR is not multioutput, so the RMSE here applies only to generated energy values. Dividing RMSE by this mean yields a relative RMSE of .54. This is substaintally worse and further indicates the poor performance of SVR.
+
+For the cost predictions, the R-squared as a minimum value of -0.000417 and a maximum value of -0.000002. This showcases a lot of variation in the metric, meaning the data is not totally unbiased across all splits for this specific prediction. The average R-squared of -0.000171 indicates a very poor fit, in fact a negative R-squared value indicates that a completely horizontal line through the dataset at some arbitrary $y$ would fit the data better [@RENAUD20101852]. MAPE scores further demonstrate this, with a minimum value of 91.9% and a maximum value of 102.2% some consistency is shown, however with an average value of 95.6% the prediction is off by nearly 100% on average, reiterating the very poor performance of SVR. The RMSE here is astronomical compared to random forest, so inferences can be made that suggest that it is worse even if considered relative to the data. Dividing RMSE by the mean shows a relative score of .50. This, similar to generated energy, is not ideal and cements SVR as not yielding good predictions for this application.
+
+### MLPRegression
+
+![Artificial neural network's predictions of generated energy against each of the input features transposed on top of a scatter plot of the raw data of the feature in question.](images/ann-generated-energy-vs-inputs.png)
+![Artificial neural network's predictions of cost against each of the input features transposed on top of a scatter plot of the raw data of the feature in question.](images/ann-cost-vs-inputs.png)
+
+The graphs, depending on interpretation, indicate both that the ANN could be performing well, or that it is performing poorly. This is because the curve is relatively straight, but it does move in response to the data, unlike the SVR. Looking deeper at each individual curve, for latitude and longitude the curves seem to indicate good fits. The lines move with the data, following the most dense points, however the capacity curve shows the opposite. With the random forest's capacity curve, the number of predictions at 16 MW in capacity was a lot higher, and the variance in those predictions was spread out across nearly all possible output values. This made sense because the dataset is full of mostly 16 MW capacity wind farms. For the ANN's capacity curves, this is not represented. Instead, it seems to be giving equal weight to all of the various capacities, which does not represent the data at all. In the end, the graphs are hard to interpret and do not give a clear picture for how ANN performs with this application. The results of k-fold cross-validation serve to fill in these gaps and outline the performance of ANN.
+
+Table: 10-fold cross-validation results for the artificial neural network.
+
+|        | Fit time (s) | Score time (s) | R-squared | RMSE | MAPE |
+|:-------|:-----|:--------|:--------|:---------|:----|
+|        |2.29  |0.0039   |0.18962  |8928638   |0.655|
+|        |0.73  |0.0049   |0.19106  |8854147   |0.731|
+|        |0.72  |0.0039   |0.18650  |8930511   |0.652|
+|        |3.34  |0.0040   |0.19650  |8899258   |0.716|
+|        |1.02  |0.0129   |0.19630  |8833933   |0.678|
+|        |7.00  |0.0039   |0.20126  |8808617   |0.667|
+|        |0.75  |0.0040   |-0.00095 |9860140   |1.072|
+|        |0.81  |0.0040   |0.20055  |8879911   |0.647|
+|        |0.67  |0.0039   |0.20438  |8752960   |0.685|
+|        |1.36  |0.0030   |0.18984  |8804856   |0.678|
+|**Averages**|**1.87**|**0.0048**|**0.17551**|**8955297**|**0.718**|
+
+Results from cross-validation indicate that the ANN is performing poorly in general. With an R-squared minimum of -0.00095 and a maximum of 0.20438, the score variation is quite large, but it is important to note that the minimum score is an outlier, as all other values are consistent. This demonstrates that some splits of the dataset are immensely bias, but more often than not, the data is consistent and unbiased. With an average R-squared of 0.17551, the model does not fit the data well, but it is not as poor of a fit as the SVR, which could suggest that ANN may perform a lot better with more robust hyperparameter tuning due to its complexity as a machine learning algorithm. MAPE scores also point towards both conclusions. With a minimum value of 64.7% and a maximum value of 107.2%, the variation shows itself in this metric as well. With an average score of 71.8%, ANN falls into the classification of a very poor fit. The RMSE values, while still larger, are more in line with those seen from the random forest cross-validation. Relative to the dataset, the RMSE reports a score of 0.45, which reinforces the ANN having a poor fit, but it is less than the SVR, showing some improvement. Overall, ANN does not seem to model the data correctly, but the scores alongside the simple implementation of ANN suggests that many improvements could be made to potentially see better results.
 
 ## Threats to Validity
 
+There exist many different factors that could potentially invalidate the results of this experimentation. The best example of this lies in the issues with the solar data. During its refactoring, a method to try and incorporate more input features into the calculations was employed as an attempt to remove the heavy bias that was present in the first dataset. Calculations used in this refactoring ended up being circular, simply as a result of how solar panel energy generation is calculated. In the end, the bias was not dealt with, which caused the dataset to heavily skew the results of experimentation to suggest that all three algorithms could perfectly model the solar data. Of course, this is wholly unrealistic and does not present convincing evidence that the methods used result in valid and robust results. For these reasons, the analysis was not included in this paper. The over arching idea surrounding the solar data, that is the invalid methods for performing calculations, serve as the biggest threat to validity for the wind data and results thereof. Starting with incomplete data and being required to fill in the gaps leaves much room for error in the process. One incorrect or misrepresented calculation is enough to flood the dataset with bias, entirely invalidating the results.
 
+Dataset concerns are not the only threats the results of this research face. The selected models were chosen based off of a few factors. Those being, simplicity, ease of use, and relevance in the literature. Little work was done to ensure that the algorithms picked align with the goals of the project, as each algorithm excels at different problems. The use of the incorrect algorithms could skew the results to look better or worse than what is true. For example, if random forest is not an ideal algorithm for this problem, then the results obtained from the analysis could be potentially meaningless, invalidating the best result of the study. Likewise, is SVR or ANN are the wrong algorithms for this problem, then this work becomes less robust as only one good algorithm was covered, and the other algorithms that fit the problem better were not even considered, supplying a one-sided story into modeling array parameters.
+
+The models themselves also serve to threaten the validity of this study. A main goal of this project was to attempt to make interactions with algorithms and models as simple as possible, to push the limits and see if accurate predictions can be achieved from very little. While this is an interesting investigation, it could serve to falsely portray the effectiveness of algorithms like SVR or ANN. Although using the models in the way this research did serves to answer the question, because so much effort was put into ensuring the simplest form of the algorithm was used, non-complex and easy to implement hyperparameter tunings, or other methods, could have been used to significantly improve model performance across the board. If this is the case, then the goal of the project is undermined and the results fail to portray truth.
+
+Finally the misuse and misunderstanding of evaluation metrics and techniques has the potential to invalidate the results of the project. The metrics chosen were picked because they seemed like the best fits for the data being examined, and because they have seen extensive use in literature similar to this [@FAN2017222] [@TAGHAVIFAR2014569] [@WALKER2020109705]. It very much so could be the case that the metrics and techniques chosen are not the right fit for this application. If this is the case, then the experiment conducted becomes somewhat meaningless as it does not truly portray the best and most accurate insights possible. Along these same lines, when it comes to k-fold cross-validation the literature guided the process of selecting the number of folds [@doi:10.1080/00401706.1977.10489581] [@MahmoodKhan+2009]. Ten folds may not have been enough to rigorously test the entire dataset on the model. More biases may be present within the dataset that went undiscovered since only ten folds were used. Ultimately, the reasons listed in this section serve as only some of the potential ways this research may not be entirely accurate. There are many other potential issues with the methodology and experimentation of this research, however much work was done to ensure the results portrayed are accurate, honest, robust, and valid.
 
 # Conclusion
 
 ## Summary of Results
 
 ## Future Work
-
-## Future Ethical Implications and Recommendations
 
 ## Conclusions
 
