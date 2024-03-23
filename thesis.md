@@ -116,11 +116,11 @@ To get the states that each wind farm and solar array resides in, a library call
 
 For the wind data, it is critical that the new calculation method incorporates some locational information. In the starting dataset, the wind speed feature holds this potential as it varies depending on location. A formula for calculating the power in the wind utilizes wind speed, and serves as a good starting point for getting to generated energy in a way that is less dependent on capacity. the formula is defined as follows, where $\rho$ is the density of air, $A$ is the swept area of the wind turbine, and $v$ is the wind speed [@sarkar2012wind]:
 
-$$ P=\frac{1}{2}Av^3\rho $$.
+$$ P=\frac{1}{2}Av^3\rho $$
 
 For the purposes of simplicity and consistency, some values here are constant, those being $\rho = 1.225kg/m^2$ and $A = 7854m^2$, which assumes each wind turbine blade is 50 meters in length. With this value, available energy can be calculated by scaling the value up with how many turbines make up a wind farm. This value is found through the capacity, where it is assumed that each wind turbine accounts for 2 megawatts of capacity. We then multiply by the number of hours in a year, as we are interested in the per-year energy generation. This equation is defined as follows, where $c$ is the capacity, $P$ is the available wind power, and $h$ in the number of hours is a year, which equals 8760 hours:
 
-$$ J_a = \frac{c}{2}Ph $$.
+$$ J_a = \frac{c}{2}Ph $$
 
 To get to generated energy, all that is left is to multiply by the capacity factor to account for the inefficiencies and downtimes of a wind turbine or wind farm. This results in a final equation for generated energy as follows, where $c_f$ is the capacity factor:
 
