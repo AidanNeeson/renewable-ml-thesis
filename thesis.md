@@ -174,7 +174,9 @@ First, the hidden layers had to be defined. Some rule-of-thumb methods provide a
 
 ![A representation of the ANN used for this project.](images/ann-diagram.png)
 
-With this dataset, the ANN had difficulties converging. Because of this, the maximum number of iteration was set to 100 billion to ensure convergence on a consistent basis. The last hyperparameter that was set was the solver. `Lbfgs` was chosen as it significantly sped up training time and yielded better results than other solvers on average. 
+With this dataset, the ANN had difficulties converging. Because of this, the maximum number of iteration was set to 100 billion to ensure convergence on a consistent basis. The last hyperparameter that was set was the solver. `Lbfgs` was chosen as it significantly sped up training time and yielded better results than other solvers on average.
+
+In conclusion, this chapter has meticulously detailed the methodologies and procedures employed throughout. From the initial selection of data collection methods, to the final implementation of each of the machine learning algorithms, each step has been documented for the purpose of transparency and reproducibility. The chapter highlights the efforts made to mitigate the bias present in the datasets through extensive refactoring, refine the estimation approaches for generated energy and cost of renewable energy technologies, and leverage the machine learning algorithms and techniques effectively. By combining domain knowledge with the tools and data provided in public databases and packages, these methods lay the groundwork for acquiring accurate predictions through the use of supervised machine learning models trained on geospatial data. The insights gained from the the experiments conducted on the models obtained through this methodological exploration will supply key insights into the viability of machine learning in the field on energy and cost predictions for low-carbon technologies.
 
 
 # Experiments
